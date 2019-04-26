@@ -229,7 +229,7 @@ class Simulator(object):
             if verbose: print(self.portfolio)
             reward = self.port_val - old_port_val
         #self.port_val = self.port_value_for_output()
-        print "port value", self.port_val
+        print("port value", self.port_val)
         self.data_out.append(self.date.isoformat()[0:10] + ',' + str(self.prices.ix[self.date, self.stock_A]) + ',' + str(self.prices.ix[self.date, self.stock_B]) + ',' + action + ',' + str(abs_return_A) + ',' +  str(pct_return_A) + ',' + str(abs_return_B) + ',' + str(pct_return_B) + ',' + str((self.prices.ix[self.date, self.stock_A] - self.prices.ix[self.date, self.stock_B])) + ',' + str(self.prices_interest_rate[self.date]) + ',' + str(self.prices_SPY[self.date]) + ',' + str(self.prices_VIX[self.date]) + ',' + str(self.port_val))
         if verbose: print(self.data_out)
         state = self.get_state(self.date)
@@ -256,7 +256,7 @@ class Simulator(object):
         # a vector of features
         if (date == self.prices.index[-1]):
             file_name = "data_for_vis_%s.csv" % dt.datetime.now().strftime("%H-%M-%S")
-            print "saving to", file_name
+            print("saving to", file_name)
             file = open(file_name, 'w');
             for line in self.data_out:
                 file.write(line);

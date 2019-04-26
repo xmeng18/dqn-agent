@@ -8,7 +8,7 @@ def main():
     n_iter = 5
     for i in range(n_iter):
 
-        env_train = Simulator(['scg', 'wec'], dt.datetime(2002, 01, 04), dt.datetime(2016, 12, 31))
+        env_train = Simulator(['scg', 'wec'], dt.datetime(2002, 1, 4), dt.datetime(2016, 12, 31))
 
         agent = PolicyGradientAgent(lookback=env_train.init_state())
         #critic_agent = CriticsAgent(lookback=env.init_state())
@@ -17,7 +17,7 @@ def main():
 
         while env_train.has_more():
         	action = actions[action] # map action from id to name
-        	print "Runner: Taking action", env_train.date, action
+        	print("Runner: Taking action", env_train.date, action)
         	reward, state = env_train.step(action)
         	action = agent.query(state, reward)
 '''
