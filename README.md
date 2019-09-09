@@ -1,7 +1,7 @@
 # dqn-agent
 
 
-## Reference
+## Reference!
 
 https://github.com/xtr33me/Reinforcement_Learning_for_Stock_Prediction
 
